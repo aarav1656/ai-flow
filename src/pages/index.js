@@ -8,7 +8,6 @@ import { ConnectBtn } from "components/custombutton";
 import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 import { ethers } from "ethers";
-// import abi from "../contract/abi.json";
 import {
   Flex,
   Text,
@@ -103,7 +102,7 @@ export default function Home() {
             <div className="hover-underline-animation">
               <Text fontSize={{ base: "11px", lg: "20px" }} cursor={"pointer"}>
                 <a
-                  href="https://twitter.com/aimintHQ"
+                  href=""
                   target={"_blank"}
                   rel="noreferrer"
                 >
@@ -147,8 +146,8 @@ export default function Home() {
             </Text>
 
             <Text fontSize={"12px"} fontStyle={"italic"}>
-              by <a href={"https://www.ahzam.xyz/"}>ahzam</a> &{" "}
-              <a href={"https://twitter.com/AayushCodes"}>aayush</a> //
+              by <a href={""}>ahzam</a> &{" "}
+              <a href={""}></a> //
             </Text>
           </Flex>
 
@@ -160,11 +159,7 @@ export default function Home() {
               border={"1px solid black"}
               borderStyle={"dashed"}
             >
-              <Canvas predictions={predictions} />
             </Flex>
-
-            {/* <PromptForm onSubmit={handleSubmit} /> */}
-
             <Flex gap={"8px"}>
               <ConnectBtn />
               {!(generated && isConnected) ? (
@@ -184,8 +179,6 @@ export default function Home() {
                 </Button>
               ) : (
                 <Button
-                  onClick={main}
-                  disabled={minting}
                   type={"submit"}
                   background={"rgba(0, 0, 0, 0.05)"}
                   height={"38px"}
@@ -228,12 +221,12 @@ export default function Home() {
               ) : (
                 <>
                   <Text width={{ base: "328px", lg: "428px" }}>
-                    you need to have some funds on mantle on your wallet for
+                    you need to have some funds on flow on your wallet for
                     this to work,{" "}
                     <i>
                       grab some from{" "}
                       <a
-                        href="https://mirror.xyz/0xmantle.eth/qIDSO3AsFnXmwVLSYfODZWOpK_0K01UdvR3ZxUCtCjw"
+                        href=""
                         style={{ textDecoration: "underline" }}
                       >
                         here
@@ -271,7 +264,7 @@ export default function Home() {
               <Text fontStyle={"italic"} fontSize={"14px"}>
                 we let you type your creativity and generate it as an art using
                 the latest stable diffusion model and then let you mint it as a
-                gasless NFT on the mantle (testnet) chain.
+                gasless NFT on the flow (testnet) chain.
               </Text>
             </Flex>
           </Flex>
@@ -381,14 +374,4 @@ export default function Home() {
       </Drawer>
     </>
   );
-}
-function readAsDataURL(file) {
-  return new Promise((resolve, reject) => {
-    const fr = new FileReader();
-    fr.onerror = reject;
-    fr.onload = () => {
-      resolve(fr.result);
-    };
-    fr.readAsDataURL(file);
-  });
 }
